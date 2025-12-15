@@ -34,7 +34,7 @@ iface enp0s8 inet static
     netmask 255.255.255.0
 ```
 
-![[carte_réseau_debian.png]]
+![[carte_réseau_debian.png]](Ressources/carte_réseau_debian.png)
 
 puis on redémarre 
 ```

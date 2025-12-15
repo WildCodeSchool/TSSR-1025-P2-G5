@@ -17,7 +17,7 @@ Chaque VM possèdent deux carte réseau :
 
 1) aller dans le menu de configuration des deux VM sur VirtualBox, puis dans la section 'réseau'.
 ajouter ensuite un deuxième adaptateur que l'on renomme 'lan1', pour les deux machines :
-![[configuration_reseau_interne.png]]
+![[configuration_reseau_interne.png]](.Ressources/configuration_reseau_interne.png)
 2) configurer ensuite les adresses ip:
 serveur DEBIAN : 172.16.50.10
 client UBUNTU : 172.16.50.30
@@ -34,7 +34,7 @@ iface enp0s8 inet static
     netmask 255.255.255.0
 ```
 
-![[carte_réseau_debian.png]](Ressources/carte_réseau_debian.png)
+![[carte_réseau_debian.png]](.Ressources/carte_réseau_debian.png)
 
 puis on redémarre 
 ```
@@ -43,13 +43,13 @@ sudo reboot
 
 ### sur le client Ubuntu 
 le client Ubuntu utilise une adresse IP configurée en GUI dans :  paramètre  → réseau  → Ethernet (enp0s8)  ( l'activer.)
-![[configuration_ip_ubuntu1.png]]
+![[configuration_ip_ubuntu1.png]](.Ressources/configuration_ip_ubuntu1.png)
 
 
 Configurer manuellement l'adresse IP : 
 Filaire → IPV4
 
-![[configuraton_ip_ubuntu2.png]]
+![[configuraton_ip_ubuntu2.png]](.Ressources/configuraton_ip_ubuntu2.png)
 
 Puis, redémarrer 
 ```
@@ -76,7 +76,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 Insérer l'image CD des guest additions dans le menu _périphérique_ de la machine virtuelle VirtualBox, et monter l'image CD
 
-![[guest_additions_debian.png]]
+![[guest_additions_debian.png]](.Ressources/guest_additions_debian.png)
 
 
 ```
@@ -110,12 +110,12 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 
 3) Cliquer sur Périphériques > **Insérer l’image CD des Additions invité**. 
-![[guest_additions_ubuntu.png]]
+![[guest_additions_ubuntu.png]](.Ressources/guest_additions_ubuntu.png)
 
 5) Lancer le programme d’installation des additions invité 
 	-  en graphique : ouvrir le gestionnaire de fichiers > lecteur CD > **VBoxLinuxAdditions.run** > **Lancer**.
 
-![[guest_additions_ubuntu2.png]]
+![[guest_additions_ubuntu2.png]](.Ressources/guest_additions_ubuntu2.png)
 
 
 
@@ -159,20 +159,20 @@ ssh-keygen
 ```
 
 
-![[génération_paire_de_clées.png]]
+![[génération_paire_de_clées.png]](.Ressources/génération_paire_de_clées.png)
 
 
 2) copier la clé publique sur Ubuntu 
 ```
 ssh-copy-id wilder@172.16.50.30
 ```
-![[copier_clé_publique.png]]
+![[copier_clé_publique.png]](.Ressources/copier_clé_publique.png)
 
 3) connexion à la machine en ssh 
 ```
 ssh wilder@172.16.50.30
 ```
-![[connexion_en_ssh.png]]
+![[connexion_en_ssh.png]](.Ressources/connexion_en_ssh.png)
 
 
 
@@ -201,4 +201,4 @@ vérification
 
 le menu :
 
-![[menu.png]]
+![[menu.png]](.Ressources/menu.png)

@@ -17,7 +17,7 @@ Chaque VM possèdent deux carte réseau :
 
 1) aller dans le menu de configuration des deux VM sur VirtualBox, puis dans la section 'réseau'.
 ajouter ensuite un deuxième adaptateur que l'on renomme 'lan1', pour les deux machines :
-![[Pasted image 20251214010925.png]]
+![[configuration_reseau_interne.png]]
 2) configurer ensuite les adresses ip:
 serveur DEBIAN : 172.16.50.10
 client UBUNTU : 172.16.50.30
@@ -34,7 +34,7 @@ iface enp0s8 inet static
     netmask 255.255.255.0
 ```
 
-![[Pasted image 20251214012802.png]]
+![[carte_réseau_debian.png]]
 
 puis on redémarre 
 ```
@@ -43,13 +43,13 @@ sudo reboot
 
 ### sur le client Ubuntu 
 le client Ubuntu utilise une adresse IP configurée en GUI dans :  paramètre  → réseau  → Ethernet (enp0s8)  ( l'activer.)
-![[Pasted image 20251214013325.png]]
+![[configuration_ip_ubuntu1.png]]
 
 
 Configurer manuellement l'adresse IP : 
 Filaire → IPV4
 
-![[Pasted image 20251214013636.png]]
+![[configuraton_ip_ubuntu2.png]]
 
 Puis, redémarrer 
 ```
@@ -76,7 +76,7 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 Insérer l'image CD des guest additions dans le menu _périphérique_ de la machine virtuelle VirtualBox, et monter l'image CD
 
-![[Pasted image 20251215103006.png]]
+![[guest_additions_debian.png]]
 
 
 ```
@@ -110,12 +110,12 @@ sudo apt install build-essential dkms linux-headers-$(uname -r)
 
 
 3) Cliquer sur Périphériques > **Insérer l’image CD des Additions invité**. 
-![[Pasted image 20251215103448.png]]
+![[guest_additions_ubuntu.png]]
 
 5) Lancer le programme d’installation des additions invité 
 	-  en graphique : ouvrir le gestionnaire de fichiers > lecteur CD > **VBoxLinuxAdditions.run** > **Lancer**.
 
-![[Pasted image 20251215104309.png]]
+![[guest_additions_ubuntu2.png]]
 
 
 
@@ -159,20 +159,20 @@ ssh-keygen
 ```
 
 
-![[Pasted image 20251214005458.png]]
+![[génération_paire_de_clées.png]]
 
 
 2) copier la clé publique sur Ubuntu 
 ```
 ssh-copy-id wilder@172.16.50.30
 ```
-![[Pasted image 20251214005806.png]]
+![[copier_clé_publique.png]]
 
 3) connexion à la machine en ssh 
 ```
 ssh wilder@172.16.50.30
 ```
-![[Pasted image 20251214010026.png]]
+![[connexion_en_ssh.png]]
 
 
 
@@ -201,4 +201,4 @@ vérification
 
 le menu :
 
-![[Pasted image 20251215100801.png]]
+![[menu.png]]

@@ -1,1 +1,204 @@
+# Prérequis technique
 
+- VM Linux Ubuntu 64 bits 
+- VM Debian GNU/Linux 13 
+- Guest additions sur les deux VM 
+- Git installé 
+- SSH installé
+- connexion SSH établie 
+- réseau interne configuré
+- droits sudo 
+
+# Configuration du réseau IP interne 
+
+Chaque VM possèdent deux carte réseau :
+- adaptateur 1 : NAT
+- adaptateur 2 : Réseau interne ( ici renommé lan1)
+
+1) aller dans le menu de configuration des deux VM sur VirtualBox, puis dans la section 'réseau'.
+ajouter ensuite un deuxième adaptateur que l'on renomme 'lan1', pour les deux machines :
+![[Pasted image 20251214010925.png]]
+2) configurer ensuite les adresses ip:
+serveur DEBIAN : 172.16.50.10
+client UBUNTU : 172.16.50.30
+
+### Sur le serveur Debian :
+le serveur Debian utilise une adresse IP configurée dans le fichier '/etc/network/interfaces'
+
+On rajoute au fichier la partie :
+```
+allow-hotplug enp0s8
+auto enp0s8
+iface enp0s8 inet static
+    address 172.16.50.10
+    netmask 255.255.255.0
+```
+
+![[Pasted image 20251214012802.png]]
+
+puis on redémarre 
+```
+sudo reboot 
+```
+
+### sur le client Ubuntu 
+le client Ubuntu utilise une adresse IP configurée en GUI dans :  paramètre  → réseau  → Ethernet (enp0s8)  ( l'activer.)
+![[Pasted image 20251214013325.png]]
+
+
+Configurer manuellement l'adresse IP : 
+Filaire → IPV4
+
+![[Pasted image 20251214013636.png]]
+
+Puis, redémarrer 
+```
+sudo reboot
+```
+
+
+# Installer les Guests Additions 
+
+## sur Debian 
+
+1) mettre la machine à jour 
+```
+sudo apt update
+sudo apt upgrade -y 
+```
+
+2) installer les paquets nécessaires
+````
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+````
+
+3) monter l'image CD
+
+Insérer l'image CD des guest additions dans le menu _périphérique_ de la machine virtuelle VirtualBox, et monter l'image CD
+
+![[Pasted image 20251215103006.png]]
+
+
+```
+sudo mount /dev/cdrom /mnt
+```
+
+4) exécuter le script d'installation 
+```
+cd /mnt
+sudo ./VBoxLinuxAdditions.run
+```
+
+5) redémarrer la machine virtuelle
+```
+sudo reboot
+```
+
+## sur Ubuntu 
+
+1) mettre la machine à jour
+````
+sudo apt update
+sudo apt upgrade -y 
+````
+
+
+2) installer les paquets nécessaires
+````
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+````
+
+
+3) Cliquer sur Périphériques > **Insérer l’image CD des Additions invité**. 
+![[Pasted image 20251215103448.png]]
+
+5) Lancer le programme d’installation des additions invité 
+	-  en graphique : ouvrir le gestionnaire de fichiers > lecteur CD > **VBoxLinuxAdditions.run** > **Lancer**.
+
+![[Pasted image 20251215104309.png]]
+
+
+
+ en interface de commande : 
+
+
+```
+cd /media/[Utilisateur]/VBOX_GAs_xxx/
+sudo ./VBoxLinuxAdditions.run
+```
+
+
+5) redémarrer la machine virtuelle```
+
+```
+sudo reboot
+```
+
+
+# Installer GIT 
+
+1) installer GIT
+```
+sudo apt install git -y
+```
+
+2) vérifier l'installation 
+```
+git --version 
+```
+ 
+
+
+# connexion SSH
+
+## sur la machine cliente ( Debian )
+
+1) générer une paire de clés sur le client 
+```
+ssh-keygen 
+```
+
+
+![[Pasted image 20251214005458.png]]
+
+
+2) copier la clé publique sur Ubuntu 
+```
+ssh-copy-id wilder@172.16.50.30
+```
+![[Pasted image 20251214005806.png]]
+
+3) connexion à la machine en ssh 
+```
+ssh wilder@172.16.50.30
+```
+![[Pasted image 20251214010026.png]]
+
+
+
+# installation du programme
+
+récupération du projet
+```
+git clone <URL_DU_REPO>
+cp <NOM_DU_PROJET>
+```
+
+
+attribution des droits 
+```
+chmod +x script.sh
+```
+
+lancement du programme
+```
+./script.sh
+```
+
+vérification 
+- le script affiche bien le menu principal 
+- les actions distantes fonctionnent grâce au SSH
+
+le menu :
+
+![[Pasted image 20251215100801.png]]

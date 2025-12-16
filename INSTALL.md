@@ -17,7 +17,7 @@ Chaque VM possède deux cartes réseau :
 
 1) aller dans le menu de configuration des deux VM sur VirtualBox, puis dans la section 'réseau'.
 ajouter ensuite un deuxième adaptateur que l'on renomme 'lan1', pour les deux machines :
-![[configuration_reseau_interne.png]]
+![[configuration_reseau_interne.png]](.Ressources/configuration_reseau_interne.png)
 2) configurer ensuite les adresses ip:
 serveur DEBIAN : 172.16.50.10
 client UBUNTU : 172.16.50.30
@@ -34,7 +34,7 @@ iface enp0s8 inet static
     netmask 255.255.255.0
 ```
 
-![[carte_réseau_debian.png]]
+![[carte_réseau_debian.png]](.Ressources/carte_réseau_debian.png)
 
 puis on redémarre 
 ```
@@ -43,13 +43,13 @@ sudo reboot
 
 ### sur le client Ubuntu 
 le client Ubuntu utilise une adresse IP configurée en GUI dans :  paramètre  → réseau  → Ethernet (enp0s8)  ( l'activer.)
-![[configuration_ip_ubuntu1.png]]
+![[configuration_ip_ubuntu1.png]](.Ressources/configuration_ip_ubuntu1.png)
 
 
 Configurer manuellement l'adresse IP : 
 Filaire → IPV4
 
-![[configuraton_ip_ubuntu2.png]]
+![[configuraton_ip_ubuntu2.png]](.Ressources/configuraton_ip_ubuntu2.png)
 
 - Adresse IP : 172.16.50.30  
 - Masque : 255.255.255.0

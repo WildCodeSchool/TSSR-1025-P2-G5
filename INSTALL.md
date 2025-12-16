@@ -201,4 +201,4 @@ vérification
 
 le menu :
 
-![[menu.png]](.Ressources/menu.png)
+![[menu.png]](.Ressources/lancement_menu.png)

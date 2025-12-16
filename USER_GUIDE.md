@@ -1,8 +1,8 @@
-# à quoi sert le programme ?
+# À quoi sert le programme ?
 
 Le projet consiste à créer un script Bash permettant d'administrer une machine Linux à distance via SSH depuis une machine Debian ( gestion d'utilisateurs, informations système, action sur la machine etc.). L'objectif est de proposer un outil simple, intuitif et efficace permettant d'automatiser des actions répétitives. 
 
-# à qui s'adresse le programme ?
+# À qui s'adresse le programme ?
 
 Ce programme est destiné aux administrateurs réseau souhaitant automatiser des tâches courantes sur une machine linux à distance.
 

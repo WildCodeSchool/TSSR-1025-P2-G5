@@ -1,5 +1,4 @@
-# TSSR-1025-P2-G5
-Description 
+## Description 
 
 Le projet consiste à créer un script Bash permettant d'administrer une machine Linux à distance via SSH depuis une machine Debian ( gestion d'utilisateurs, informations système, action sur la machine etc.). L'objectif est de proposer un outil simple, intuitif et efficace permettant d'automatiser des actions répétitives. 
 
@@ -18,7 +17,8 @@ le script permet notamment de :
 
 ## Architecture technique
 
-plage ID :  **172.16.50.0/24**
+plage IP :  **172.16.50.0/24**
+nom du script : script_projet2.sh
 
 **CLIENT** :
 - OS : Linux Ubuntu (64 bits)
@@ -62,8 +62,9 @@ plage ID :  **172.16.50.0/24**
 
 ## Difficultés rencontrées
 
-- gestions des droits sudo à distance
+- gestion des droits sudo à distance
 - affichage de la liste des utilisateur via SSH 
+- mise en forme de l'esthétique du menu 
 
 ## Suggestion d'améliorations futures 
 

@@ -19,7 +19,9 @@ Chaque VM possède deux cartes réseau :
 ajouter ensuite un deuxième adaptateur que l'on renomme 'lan1', pour les deux machines :
 ![[configuration_reseau_interne.png]](.Ressources/configuration_reseau_interne.png)
 2) configurer ensuite les adresses ip:
+
 serveur DEBIAN : 172.16.50.10
+
 client UBUNTU : 172.16.50.30
 
 ### Sur le serveur Debian :

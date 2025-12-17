@@ -17,7 +17,7 @@ Ce programme est destiné aux administrateurs réseau souhaitant automatiser des
 ```
 #lancement du programme depuis le serveur Debian :
 
-./script4.sh
+./script_projet2.sh
 
 ```
 
@@ -70,12 +70,13 @@ Si l’utilisateur saisit une option différente de celles proposées, un messag
 ![[gestion_ordinateur1.png]](.Ressources/gestion_ordinateur1.png)
 
 Le menu affiche la machine sur laquelle se connecter 
+
 CLILIN01 :
 
 ![[gestion_ordinateur3.png]](.Ressources/gestion_ordinateur3.png)
 
 
-Menu 'Ordinateur' permettant d'effectuer des **actions** sur la machine distante (arrêt ou redémarrage) et de consulter les **informations systèmes** : version de l'OS, nombre de partitions et mémoire RAM totale.
+Menu 'Ordinateur' permettant d'effectuer des **actions** sur la machine distante (arrêt ou redémarrage) et de consulter les **informations systèmes** ( version de l'OS, nombre de partitions et mémoire RAM totale.)
 
 ##### 1) **ACTION sélectionné**
 

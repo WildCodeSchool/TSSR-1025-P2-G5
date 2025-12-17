@@ -18,6 +18,7 @@ le script permet notamment de :
 ## Architecture technique
 
 plage IP :  **172.16.50.0/24**
+
 nom du script : script_projet2.sh
 
 **CLIENT** :

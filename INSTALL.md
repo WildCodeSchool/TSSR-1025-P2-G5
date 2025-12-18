@@ -134,7 +134,7 @@ sudo ./VBoxLinuxAdditions.run
 ```
 
 
-5) redémarrer la machine virtuelle```
+5) redémarrer la machine virtuelle
 
 ```
 sudo reboot

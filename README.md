@@ -12,7 +12,7 @@ le script permet notamment de :
 ## Contexte du projet 
 
 - **formation** : TSSR (technicien système et réseaux)
-- **objectif pédagogique** : Développer un script Bash qui capable d'administrer une machine cliente Ubuntu et réaliser des actions à distance, exécutable depuis un serveur Debian.
+- **objectif pédagogique** : Développer un script Bash qui est capable d'administrer une machine cliente Ubuntu et réaliser des actions à distance, exécutable depuis un serveur Debian.
 - **environnement utilisé** : VirtualBox
 
 ## Architecture technique
